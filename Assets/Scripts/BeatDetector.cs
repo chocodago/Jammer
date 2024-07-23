@@ -9,6 +9,8 @@ public class BeatDetector : MonoBehaviour
     public float[] samples = new float[512];
     public float[] freqBand = new float [5];
 
+    public GameObject youWonPanel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,12 @@ public class BeatDetector : MonoBehaviour
         audioSource.GetSpectrumData(samples, 0, FFTWindow.Blackman);
 
         MakeFrequencyBands();
+
+        if (!audioSource.isPlaying)
+        {
+            Time.timeScale = 0;
+            youWonPanel.SetActive(true);
+        }
     }
     void MakeFrequencyBands()
     {

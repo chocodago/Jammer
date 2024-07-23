@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 4901775658086240824}
   - component: {fileID: 7311668025825031245}
   - component: {fileID: 8617433514679697161}
+  - component: {fileID: 3413451063415168331}
   - component: {fileID: 8529468179407880372}
   m_Layer: 0
   m_Name: BeatsToTap
-  m_TagString: Untagged
+  m_TagString: Beats
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -131,6 +132,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &3413451063415168331
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4784058429393370451}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &8529468179407880372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,3 +171,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 547d7a70e0957f84bb0530bd9dacf6f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  downSpeed: 3
+  tapSound: {fileID: 8300000, guid: 496a8c98bddd69d428c226c49db14fe2, type: 3}

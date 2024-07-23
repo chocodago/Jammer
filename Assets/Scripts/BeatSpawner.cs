@@ -31,16 +31,24 @@ public class BeatSpawner : MonoBehaviour
             timer = 0f;
 
             Array.Copy(beatDetector.freqBand, beatsSize, beatDetector.freqBand.Length);
-            
+
+            for (int i = 0; i < spawnPos.Length; i++)
+            {
+                if(beatsSize[i] > 1.0f)
+                {
+                    GameObject tapArea = Instantiate(beatsPrefab, spawnPos[i].position, Quaternion.identity);
+                    tapArea.transform.localScale = new Vector3(1, beatsSize[i], 0);
+                }
+            }
+            /*
             foreach(float size in beatsSize)
             {
                 if(size > 1.0f)
                 {
-                    int r = UnityEngine.Random.Range(0, spawnPos.Length);
-                    GameObject tapArea = Instantiate(beatsPrefab, spawnPos[r].position, Quaternion.identity);
+                    GameObject tapArea = Instantiate(beatsPrefab, spawnPos[, Quaternion.identity);
                     tapArea.transform.localScale = new Vector3(1, size, 0);
                 }
-            }
+            }*/
         }       
     }
     
